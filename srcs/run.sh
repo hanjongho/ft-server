@@ -9,7 +9,7 @@ mv localhost.dev.crt etc/ssl/certs/
 mv localhost.dev.key etc/ssl/private/
 chmod 600 etc/ssl/certs/localhost.dev.crt etc/ssl/private/localhost.dev.key
 
-if [ ${AUTOINDEX} == "OFF" || ${AUTOINDEX} == "off" ]; then
+if [ ${AUTOINDEX} == "OFF" ] || [ ${AUTOINDEX} == "off" ]; then
 	cp -rp /tmp/default_off /etc/nginx/sites-available/default
 else
 	cp -rp /tmp/default_on /etc/nginx/sites-available/default
