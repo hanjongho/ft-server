@@ -13,7 +13,8 @@ RUN		apt-get update && apt-get install -y \
 		wget
 
 COPY	./srcs/run.sh ./
-COPY	./srcs/default ./tmp
+COPY	./srcs/default_on ./tmp
+COPY	./srcs/default_off ./tmp
 COPY	./srcs/wp-config.php ./tmp
 COPY	./srcs/config.inc.php ./tmp
 

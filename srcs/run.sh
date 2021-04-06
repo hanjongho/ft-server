@@ -9,7 +9,11 @@ mv localhost.dev.crt etc/ssl/certs/
 mv localhost.dev.key etc/ssl/private/
 chmod 600 etc/ssl/certs/localhost.dev.crt etc/ssl/private/localhost.dev.key
 
-cp -rp /tmp/default /etc/nginx/sites-available/
+if [ ${AUTOINDEX} == "ON" ]; then
+	cp -rp /tmp/default_on /etc/nginx/sites-available/default
+elif [ ${AUTOINDEX} == "OFF" ]; then
+	cp -rp /tmp/default_off /etc/nginx/sites-available/default
+fi
 
 wget https://wordpress.org/latest.tar.gz
 tar -xvf latest.tar.gz
